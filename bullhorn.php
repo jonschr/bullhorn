@@ -49,12 +49,12 @@ if ( !function_exists( 'console_log' ) ) {
 }
 
 //* Plugin Update Checker
-// require 'vendor/plugin-update-checker/plugin-update-checker.php';
-// $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-// 	'https://github.com/jonschr/bullhorn',
-// 	__FILE__,
-// 	'bullhorn'
-// );
+require 'vendor/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/jonschr/bullhorn',
+	__FILE__,
+	'bullhorn'
+);
 
 // Optional: Set the branch that contains the stable release.
-// $myUpdateChecker->setBranch('main');
+$myUpdateChecker->setBranch('main');

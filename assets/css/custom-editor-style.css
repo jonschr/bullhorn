@@ -15,3 +15,7 @@
     color: #666 !important;
     margin: 0 !important;
 }
+
+.is-root-container > div.wp-block {
+    margin: 0 auto !important;
+}

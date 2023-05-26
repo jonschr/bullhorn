@@ -1,24 +1,31 @@
-(function (wp, dom) {
-    var maxWidth = 0;
+jQuery(window).on('load', function () {
+    jQuery(document).ready(function ($) {
+        var maxWidth = 0;
+        var editorContainer = $('.is-root-container');
 
-    function updateMaxWidth() {
-        var widthField = dom.document.getElementById('width');
-        var editorContainer = dom.document.querySelector('.is-root-container');
+        function updateMaxWidth() {
+            var widthField = $('#width');
+            var wpBlocks = editorContainer.find('> div.wp-block');
 
-        if (widthField && editorContainer) {
-            maxWidth = parseInt(widthField.value) || 0;
-            editorContainer.style.maxWidth = maxWidth + 'px';
+            if (widthField.length && wpBlocks.length) {
+                maxWidth = parseInt(widthField.val()) || 0;
+                wpBlocks.css('max-width', maxWidth + 'px !important');
+            }
         }
-    }
 
-    wp.domReady(updateMaxWidth);
+        updateMaxWidth();
 
-    wp.blocks.addAction(
-        'blocks.updateBlockAttributes',
-        'custom/update-max-width',
-        function (updatedAttributes, originalBlock) {
+        $('#width').on('input', function () {
             updateMaxWidth();
-            return updatedAttributes;
-        }
-    );
-})(window.wp, window.wp.dom);
+        });
+
+        wp.blocks.addAction(
+            'blocks.updateBlockAttributes',
+            'custom/update-max-width',
+            function (updatedAttributes, originalBlock) {
+                updateMaxWidth();
+                return updatedAttributes;
+            }
+        );
+    });
+});
