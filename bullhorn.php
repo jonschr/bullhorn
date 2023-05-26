@@ -1,7 +1,7 @@
 <?php
 /*
 	Plugin Name: Bullhorn
-	Plugin URI: https://github.com/jonschr/neighborhood-attractions
+	Plugin URI: https://github.com/jonschr/bullhorn
     Description: Just another highlight plugin
 	Version: 0.1
     Author: Jon Schroeder
@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 // Define the version of the plugin
-define( 'BULLHORN_VERSION', '1.0.6' );
+define( 'BULLHORN_VERSION', '0.1' );
 
 // Plugin directory
 define( 'BULLHORN_URL', plugin_dir_url( __FILE__ ) );
@@ -51,9 +51,9 @@ if ( !function_exists( 'console_log' ) ) {
 //* Plugin Update Checker
 // require 'vendor/plugin-update-checker/plugin-update-checker.php';
 // $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-// 	'https://github.com/jonschr/promo-announcer',
+// 	'https://github.com/jonschr/bullhorn',
 // 	__FILE__,
-// 	'promo-announcer'
+// 	'bullhorn'
 // );
 
 // Optional: Set the branch that contains the stable release.

@@ -12,7 +12,7 @@ function bh_register_promotions_content_type() {
 	$post_type = 'promotions';
 	$slug = 'promotions';
 	$icon = 'lightbulb'; //* https://developer.wordpress.org/resource/dashicons/
-	$supports = array( 'title', 'editor', 'thumbnail' );
+	$supports = array( 'title', 'editor' );
 
 	$labels = array(
 		'name' => $name_plural,
@@ -31,7 +31,7 @@ function bh_register_promotions_content_type() {
 
 	$args = array(
 		'labels' => $labels,
-		'public' => false,
+		'public' => true,
 		'publicly_queryable' => true,
 		'show_ui' => true,
 		'show_in_menu' => true,
