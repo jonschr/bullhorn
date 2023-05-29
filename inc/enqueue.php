@@ -20,7 +20,7 @@ function enqueue_custom_editor_assets() {
     // // bail if we're not on the promotions post type
     // if ( !$screen || $screen->post_type !== 'promotions' )
     //     return;
-    
+        
     // Enqueue JavaScript
     wp_enqueue_script(
         'custom-editor-script',

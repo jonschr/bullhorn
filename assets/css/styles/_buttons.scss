@@ -32,18 +32,22 @@
     &.bottom-left {
         left: 0;
         bottom: 0;
+        pointer-events: none;
 
         .bullhorn-button {
             border-top-right-radius: 3px;
+            pointer-events: all;
         }
     }
 
     &.bottom-right {
         right: 0;
         bottom: 0;
+        pointer-events: none;
 
         .bullhorn-button {
             border-top-left-radius: 3px;
+            pointer-events: all;
         }
     }
 
@@ -52,10 +56,12 @@
         left: 0;
         right: 0;
         text-align: center;
+        pointer-events: none;
 
         .bullhorn-button {
             border-top-left-radius: 3px;
             border-top-right-radius: 3px;
+            pointer-events: all;
         }
     }
 

@@ -50,6 +50,8 @@ jQuery(document).ready(function ($) {
                 averageBlue +
                 ')';
 
+            console.log(averageColor);
+
             // Check if the average color is defined and not transparent
             if (averageColor && averageColor !== 'transparent') {
                 // Calculate the luminance using the average RGB values
