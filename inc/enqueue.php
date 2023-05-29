@@ -7,8 +7,8 @@ function na_enqueue() {
     wp_enqueue_style( 'bullhorn-style', BULLHORN_URL . 'assets/css/bullhorn.css', array(), BULLHORN_VERSION, 'screen' );
     
     // Script
-    // wp_register_script( 'neighborhood-attractions-filter-ajax', BULLHORN_URL . 'assets/js/neighborhood-attractions-filter-ajax.js', array( 'jquery' ), BULLHORN_VERSION, true );
-    // wp_register_script( 'neighborhood-attractions-map', BULLHORN_URL . 'assets/js/neighborhood-attractions-map.js', array( 'jquery' ), BULLHORN_VERSION, true );
+    wp_register_script( 'bullhorn-triggers', BULLHORN_URL . 'assets/js/bullhorn-triggers.js', array( 'jquery' ), BULLHORN_VERSION, true );
+    wp_register_script( 'bullhorn-close-bkg-color-detection', BULLHORN_URL . 'assets/js/bullhorn-close-bkg-color-detection.js', array( 'jquery' ), BULLHORN_VERSION, true );
     
 }
 

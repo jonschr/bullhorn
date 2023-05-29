@@ -1,6 +1,23 @@
 .bullhorn-button-wrap {
     position: fixed;
 
+    .bullhorn-button {
+        padding: 20px 40px;
+        text-decoration: none;
+        position: static;
+        line-height: 1;
+        display: inline-block;
+        background-color: red;
+    }
+
+    &.left,
+    &.right {
+        .bullhorn-button {
+            padding: 40px 20px;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+    }
     // .bullhorn-button {
     //     padding: 15px 25px;
     //     background-color: #f7f7f7;
@@ -14,11 +31,19 @@
     &.bottom-left {
         left: 0;
         bottom: 0;
+
+        .bullhorn-button {
+            border-top-right-radius: 3px;
+        }
     }
 
     &.bottom-right {
         right: 0;
         bottom: 0;
+
+        .bullhorn-button {
+            border-top-left-radius: 3px;
+        }
     }
 
     &.bottom {
@@ -26,6 +51,11 @@
         left: 0;
         right: 0;
         text-align: center;
+
+        .bullhorn-button {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
     }
 
     // &.left {
@@ -62,7 +92,7 @@
 
         > a {
             writing-mode: vertical-lr; /* Rotates the text 90deg */
-            transform: rotate(-180deg); /* Fixes the rotation direction */
+            // transform: rotate(-180deg); /* Fixes the rotation direction */
             white-space: nowrap; /* Prevents text from wrapping */
             margin: 5px 0; /* Adjust the margin as needed */
         }

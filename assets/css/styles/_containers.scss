@@ -1,0 +1,112 @@
+body.no-scroll {
+    overflow: hidden;
+    margin-right: calc(100vw - 100%);
+}
+
+.bullhorn-container-bkg {
+    background-color: rgba(black, 0.8);
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.3s opacity ease-in-out;
+
+    &.active {
+        pointer-events: all;
+        opacity: 1;
+    }
+}
+
+.bullhorn-container {
+    position: fixed;
+    max-height: 90vh;
+    // overflow-y: auto;
+    z-index: 999999;
+    transition: 0.3s transform ease-in-out, 0.3s opacity ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+
+    .post-edit-link {
+        position: absolute;
+        top: 18px;
+        right: 60px;
+        font-size: 16px;
+        color: gray;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+        overflow-y: auto;
+    }
+
+    .bullhorn-wrap {
+        position: relative;
+
+        .bullhorn-close {
+            position: absolute;
+            background-color: white;
+            height: 30px;
+            width: 30px;
+            right: 15px;
+            top: 15px;
+            border-radius: 100%;
+            cursor: pointer;
+        }
+    }
+
+    &.left {
+        left: 0;
+        top: 50%;
+        transform: translateX(-100%) translateY(-50%);
+
+        &.active {
+            transform: translateY(-50%);
+        }
+    }
+
+    &.right {
+        right: 0;
+        top: 50%;
+        transform: translateX(100%) translateY(-50%);
+
+        &.active {
+            transform: translateY(-50%);
+        }
+    }
+
+    &.bottom {
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%) translateY(100%);
+
+        &.active {
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+
+    &.bottom-left {
+        left: 25px;
+        bottom: 25px;
+        transform: translateY(100%);
+
+        &.active {
+            transform: translateX(0) translateY(0);
+        }
+    }
+
+    &.bottom-right {
+        right: 25px;
+        bottom: 25px;
+        transform: translateY(100%);
+
+        &.active {
+            transform: translateX(0) translateY(0);
+        }
+    }
+}

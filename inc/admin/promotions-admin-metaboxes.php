@@ -38,11 +38,11 @@ function render_promotion_details_metabox($post) {
         <input type="text" name="button_label" id="button_label" value="<?php echo esc_attr($button_label); ?>"><br><br>
     </div>
 
-    <div class="bullhorn-fields">
+    <!-- <div class="bullhorn-fields">
         <label>Button Style:</label><br>
-        <input type="radio" name="button_style" value="Simple Button" <?php echo checked($button_style, 'Simple Button', false); ?>> Simple Button<br>
-        <input type="radio" name="button_style" value="Fancy Button with Featured Image" <?php echo checked($button_style, 'Fancy Button with Featured Image', false); ?>> Fancy Button with Featured Image<br><br>
-    </div>
+        <input type="radio" name="button_style" value="simple" <?php // echo checked($button_style, 'Simple Button', false); ?>> Simple Button<br>
+        <input type="radio" name="button_style" value="fancy" <?php // echo checked($button_style, 'Fancy Button with Featured Image', false); ?>> Fancy Button with Featured Image<br><br>
+    </div> -->
 
     <div class="bullhorn-fields">
         <label>Button Screen Position:</label><br>
