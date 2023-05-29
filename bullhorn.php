@@ -3,9 +3,9 @@
 	Plugin Name: Bullhorn
 	Plugin URI: https://github.com/jonschr/bullhorn
     Description: Just another highlight plugin
-	Version: 0.1
+	Version: 0.2
     Author: Jon Schroeder
-    Author URI: https://brindledigital.com
+    Author URI: https://elod.in
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 // Define the version of the plugin
-define( 'BULLHORN_VERSION', '0.1' );
+define( 'BULLHORN_VERSION', '0.2' );
 
 // Plugin directory
 define( 'BULLHORN_URL', plugin_dir_url( __FILE__ ) );
