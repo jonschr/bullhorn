@@ -25,10 +25,10 @@ function render_promotion_details_metabox($post) {
     // Retrieve existing values or set defaults
     $button_label = get_post_meta($post->ID, 'button_label', true) ?: 'My New Promotion';
     $button_style = get_post_meta($post->ID, 'button_style', true) ?: 'Simple Button';
-    $button_position = get_post_meta($post->ID, 'button_position', true) ?: 'bottom right';
+    $button_position = get_post_meta($post->ID, 'button_position', true) ?: 'bottom-right';
     $width = get_post_meta($post->ID, 'width', true) ?: 600;
-    $button_bg_color = get_post_meta($post->ID, 'button_bg_color', true) ?: '#ffffff';
-    $button_text_color = get_post_meta($post->ID, 'button_text_color', true) ?: '';
+    $button_bg_color = get_post_meta($post->ID, 'button_bg_color', true) ?: '#000000';
+    $button_text_color = get_post_meta($post->ID, 'button_text_color', true) ?: '#ffffff';
     $override_url = get_post_meta($post->ID, 'override_url', true) ?: '';
     
     ?>

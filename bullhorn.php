@@ -3,7 +3,7 @@
 	Plugin Name: Bullhorn
 	Plugin URI: https://github.com/jonschr/bullhorn
     Description: Just another highlight plugin
-	Version: 0.2
+	Version: 0.2.1
     Author: Jon Schroeder
     Author URI: https://elod.in
 
@@ -25,7 +25,7 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 
 // Define the version of the plugin
-define( 'BULLHORN_VERSION', '0.2' );
+define( 'BULLHORN_VERSION', '0.2.1' );
 
 // Plugin directory
 define( 'BULLHORN_URL', plugin_dir_url( __FILE__ ) );
