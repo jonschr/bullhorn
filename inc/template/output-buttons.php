@@ -108,11 +108,11 @@ function bh_simple_button() {
         .bullhorn-button-<?php echo get_the_ID(); ?> {
             
             <?php if ( $button_bg_color ) : ?>
-            background-color: <?php echo $button_bg_color; ?>;
+            background-color: <?php echo $button_bg_color; ?> !important;
             <?php endif; ?>
             
             <?php if ( $button_text_color ) : ?>
-            color: <?php echo $button_text_color; ?>;
+            color: <?php echo $button_text_color; ?> !important;
             <?php endif; ?>
         }
     </style>

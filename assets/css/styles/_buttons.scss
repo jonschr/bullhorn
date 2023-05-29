@@ -11,6 +11,10 @@
         color: white;
         transition: 0.3s all ease;
 
+        &:hover {
+            filter: brightness(110%);
+        }
+
         &.active {
             opacity: 0;
         }

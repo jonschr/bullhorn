@@ -13,7 +13,6 @@ jQuery(document).ready(function ($) {
             ).addClass('active');
             $('.bullhorn-container-bkg').addClass('active');
             $(this).addClass('active');
-            $('body').addClass('no-scroll'); // Add no-scroll class to body
         }
     });
 
@@ -23,6 +22,5 @@ jQuery(document).ready(function ($) {
         $('.bullhorn-container').removeClass('active');
         $('.bullhorn-container-bkg').removeClass('active');
         $('.bullhorn-button').removeClass('active');
-        $('body').removeClass('no-scroll'); // Remove no-scroll class from body
     });
 });
