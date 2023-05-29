@@ -50,3 +50,15 @@ function bh_register_promotions_content_type() {
 	register_post_type( $post_type, $args );
 
 }
+
+//* Redirect the single posts to the custom archive page
+add_action( 'template_redirect', 'bh_redirect_single_promotions' );
+function bh_redirect_single_promotions() {
+	
+    if ( !is_singular( 'promotions' ) )
+        return;
+
+    wp_redirect( home_url(), 301 );
+
+    exit;
+}
