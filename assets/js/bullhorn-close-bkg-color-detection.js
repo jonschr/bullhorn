@@ -1,31 +1,71 @@
 jQuery(document).ready(function ($) {
     $('.bullhorn-close').each(function () {
         var $element = $(this);
-        var $siblingDiv = $element.next('div');
-        var backgroundColor = $siblingDiv.css('background-color');
 
-        // Check if the background color is defined and not transparent
-        if (backgroundColor && backgroundColor !== 'transparent') {
-            // Convert the background color to RGB values
-            var rgbValues = backgroundColor.match(
-                /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/
-            );
+        // Get the position and dimensions of the .bullhorn-close element
+        var elementOffset = $element.offset();
+        var elementWidth = $element.outerWidth();
+        var elementHeight = $element.outerHeight();
 
-            // Check if RGB values are valid
-            if (rgbValues && rgbValues.length === 4) {
-                // Calculate the luminance using the RGB values
+        // Capture a screenshot of the area behind the .bullhorn-close element
+        html2canvas(document.body, {
+            x: elementOffset.left,
+            y: elementOffset.top,
+            width: elementWidth,
+            height: elementHeight,
+            logging: false, // Disable logging
+        }).then(function (canvas) {
+            // Get the average color from the captured screenshot
+            var ctx = canvas.getContext('2d');
+            var pixelData = ctx.getImageData(
+                0,
+                0,
+                elementWidth,
+                elementHeight
+            ).data;
+            var totalPixels = pixelData.length / 4;
+            var totalRed = 0;
+            var totalGreen = 0;
+            var totalBlue = 0;
+
+            // Calculate the total sum of RGB values
+            for (var i = 0; i < pixelData.length; i += 4) {
+                totalRed += pixelData[i];
+                totalGreen += pixelData[i + 1];
+                totalBlue += pixelData[i + 2];
+            }
+
+            // Calculate the average RGB values
+            var averageRed = Math.round(totalRed / totalPixels);
+            var averageGreen = Math.round(totalGreen / totalPixels);
+            var averageBlue = Math.round(totalBlue / totalPixels);
+
+            // Convert the average RGB values to a CSS color string
+            var averageColor =
+                'rgb(' +
+                averageRed +
+                ', ' +
+                averageGreen +
+                ', ' +
+                averageBlue +
+                ')';
+
+            // Check if the average color is defined and not transparent
+            if (averageColor && averageColor !== 'transparent') {
+                // Calculate the luminance using the average RGB values
                 var luminance =
-                    0.299 * rgbValues[1] +
-                    0.587 * rgbValues[2] +
-                    0.114 * rgbValues[3];
+                    0.299 * averageRed +
+                    0.587 * averageGreen +
+                    0.114 * averageBlue;
 
-                // Add the appropriate class based on luminance
+                // Add the appropriate class based on luminance to the nearest .post-edit-link element
+                var $container = $element.closest('.bullhorn-container');
                 if (luminance < 128) {
-                    $element.addClass('dark-bkg');
+                    $container.addClass('dark-bkg');
                 } else {
-                    $element.addClass('light-bkg');
+                    $container.addClass('light-bkg');
                 }
             }
-        }
+        });
     });
 });

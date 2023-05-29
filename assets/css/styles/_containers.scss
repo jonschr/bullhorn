@@ -29,10 +29,10 @@ body.no-scroll {
 
     .post-edit-link {
         position: absolute;
-        top: 18px;
-        right: 60px;
+        top: 15px;
+        right: 50px;
         font-size: 16px;
-        color: gray;
+        text-decoration: underline !important;
     }
 
     img {
@@ -50,13 +50,31 @@ body.no-scroll {
 
         .bullhorn-close {
             position: absolute;
-            background-color: white;
-            height: 30px;
-            width: 30px;
+            height: 20px;
+            width: 20px;
             right: 15px;
             top: 15px;
             border-radius: 100%;
             cursor: pointer;
+            display: block;
+
+            span {
+                height: 3px;
+                width: 100%;
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                cursor: pointer;
+
+                &:nth-of-type(1) {
+                    transform: rotate(45deg);
+                }
+
+                &:nth-of-type(2) {
+                    transform: rotate(-45deg);
+                }
+            }
         }
     }
 
@@ -107,6 +125,32 @@ body.no-scroll {
 
         &.active {
             transform: translateX(0) translateY(0);
+        }
+    }
+}
+
+.bullhorn-container {
+    &.dark-bkg {
+        .bullhorn-close {
+            span {
+                background-color: white;
+            }
+        }
+
+        .post-edit-link {
+            color: white !important;
+        }
+    }
+
+    &.light-bkg {
+        .bullhorn-close {
+            span {
+                background-color: black;
+            }
+        }
+
+        .post-edit-link {
+            color: black !important;
         }
     }
 }

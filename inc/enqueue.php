@@ -8,7 +8,8 @@ function na_enqueue() {
     
     // Script
     wp_register_script( 'bullhorn-triggers', BULLHORN_URL . 'assets/js/bullhorn-triggers.js', array( 'jquery' ), BULLHORN_VERSION, true );
-    wp_register_script( 'bullhorn-close-bkg-color-detection', BULLHORN_URL . 'assets/js/bullhorn-close-bkg-color-detection.js', array( 'jquery' ), BULLHORN_VERSION, true );
+    wp_register_script( 'html2canvas', 'https://html2canvas.hertzen.com/dist/html2canvas.min.js', array( 'jquery' ), BULLHORN_VERSION, true );
+    wp_register_script( 'bullhorn-close-bkg-color-detection', BULLHORN_URL . 'assets/js/bullhorn-close-bkg-color-detection.js', array( 'html2canvas' ), BULLHORN_VERSION, true );
     
 }
 

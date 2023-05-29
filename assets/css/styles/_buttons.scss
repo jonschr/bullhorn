@@ -7,7 +7,13 @@
         position: static;
         line-height: 1;
         display: inline-block;
-        background-color: red;
+        background-color: black;
+        color: white;
+        transition: 0.3s all ease;
+
+        &.active {
+            opacity: 0;
+        }
     }
 
     &.left,
@@ -18,15 +24,6 @@
             border-top-right-radius: 3px;
         }
     }
-    // .bullhorn-button {
-    //     padding: 15px 25px;
-    //     background-color: #f7f7f7;
-    //     text-decoration: none;
-    //     position: static;
-    //     line-height: 1;
-    //     display: inline-block;
-    //     margin: 0 10px;
-    // }
 
     &.bottom-left {
         left: 0;

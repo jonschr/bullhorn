@@ -13,6 +13,10 @@ function bh_output_containers() {
     // Check if any posts are found for the current position
     if ($container_query->have_posts()) {
         
+        wp_enqueue_script( 'html2canvas' );
+        wp_enqueue_script( 'bullhorn-triggers' );
+        wp_enqueue_script( 'bullhorn-close-bkg-color-detection');
+        
         // the background for the containers, should be set to active if there's anything else active
         echo '<div class="bullhorn-container-bkg"></div>';
     
@@ -27,7 +31,7 @@ function bh_output_containers() {
             printf( '<div class="bullhorn-container %s" style="max-width:%spx !important;" data-promotion="%s">', $position, $width, get_the_ID() );
                 echo '<div class="bullhorn-wrap">';
             
-                    echo '<div class="bullhorn-close"></div>';
+                    echo '<a href="#" class="bullhorn-close"><span></span><span></span></a>';
                             
                     the_content();
                     

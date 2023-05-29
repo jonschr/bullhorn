@@ -37,10 +37,7 @@ function bh_query_buttons() {
                     // Loop through the posts
                     while ($button_query->have_posts()) {
                         $button_query->the_post();
-                        
-                        wp_enqueue_script( 'bullhorn-triggers' );
-                        wp_enqueue_script( 'bullhorn-close-bkg-color-detection');
-                        
+                                                
                         do_action( 'bh_do_button' );
                     
                     }
@@ -78,21 +75,6 @@ function bh_simple_button() {
     $button_bg_color = esc_html( get_post_meta( get_the_ID(), 'button_bg_color', true ) );
     $button_text_color = esc_html( get_post_meta( get_the_ID(), 'button_text_color', true ) );
     $override_url = esc_url( get_post_meta( get_the_ID(), 'override_url', true ) );
-            
-    ?>
-    <style>
-        .bullhorn-button-<?php echo get_the_ID(); ?> {
-            
-            <?php if ( $button_bg_color ) : ?>
-            background-color: <?php echo $button_bg_color; ?>;
-            <?php endif; ?>
-            
-            <?php if ( $button_text_color ) : ?>
-            color: <?php echo $button_text_color; ?>;
-            <?php endif; ?>
-        }
-    </style>
-    <?php
     
     if ( $override_url ) {
         
@@ -120,5 +102,20 @@ function bh_simple_button() {
         printf( '<a href="#" class="bullhorn-button bullhorn-button-%s" data-button="%s">%s</a>', get_the_ID(), get_the_ID(), $label );
         
     }
+    
+    ?>
+    <style>
+        .bullhorn-button-<?php echo get_the_ID(); ?> {
+            
+            <?php if ( $button_bg_color ) : ?>
+            background-color: <?php echo $button_bg_color; ?>;
+            <?php endif; ?>
+            
+            <?php if ( $button_text_color ) : ?>
+            color: <?php echo $button_text_color; ?>;
+            <?php endif; ?>
+        }
+    </style>
+    <?php
     
 }
